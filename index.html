@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Isita 🐈‍⬛🌻</title>
+<style>
+  :root {
+    --bg1: #2b1f12;
+    --bg2: #4a2f10;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 40%, var(--bg2), var(--bg1) 75%);
+    position: relative;
+  }
+
+  .scene {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cat-wrap {
+    animation: float 3.2s ease-in-out infinite;
+    position: relative;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .bouquet {
+    transform-origin: 50% 85%;
+    animation: wiggle 2.6s ease-in-out infinite;
+    margin-top: -95px;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2.5deg); }
+    75% { transform: rotate(2.5deg); }
+  }
+
+  .message {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: #ffe9b0;
+    text-shadow: 0 0 12px rgba(255, 200, 80, 0.5);
+    opacity: 0;
+    animation: appear 1.5s ease forwards 1s;
+    line-height: 1.4;
+    padding: 0 20px;
+  }
+
+  @keyframes appear {
+    to { opacity: 1; }
+  }
+
+  .petal {
+    position: absolute;
+    top: -20px;
+    font-size: 1.3rem;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="cat-wrap">
+    <svg width="360" height="330" viewBox="0 0 360 330" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#ffdf8a" stop-opacity="0.55"/>
+          <stop offset="60%" stop-color="#ffb84d" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#ffb84d" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="eyeGrad" cx="45%" cy="35%" r="70%">
+          <stop offset="0%" stop-color="#fff6c4"/>
+          <stop offset="55%" stop-color="#ffd93b"/>
+          <stop offset="100%" stop-color="#e8a93b"/>
+        </radialGradient>
+        <linearGradient id="furGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#2b2b2b"/>
+          <stop offset="100%" stop-color="#0d0d0d"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Glow cálido de fondo -->
+      <circle cx="180" cy="150" r="170" fill="url(#glow)"/>
+
+      <!-- Sombra -->
+      <ellipse cx="180" cy="315" rx="95" ry="12" fill="#000" opacity="0.25"/>
+
+      <!-- Cola enroscada -->
+      <path d="M 265 240 Q 320 230 315 175 Q 312 150 290 158" 
+            stroke="url(#furGrad)" stroke-width="20" fill="none" stroke-linecap="round"/>
+
+      <!-- Cuerpo (chibi, redondo) -->
+      <ellipse cx="180" cy="250" rx="80" ry="65" fill="url(#furGrad)"/>
+
+      <!-- Patitas delanteras -->
+      <ellipse cx="225" cy="295" rx="20" ry="26" fill="url(#furGrad)" transform="rotate(18 225 295)"/>
+      <ellipse cx="135" cy="295" rx="20" ry="26" fill="url(#furGrad)" transform="rotate(-18 135 295)"/>
+
+      <!-- Cabeza grande (chibi) -->
+      <circle cx="180" cy="150" r="82" fill="url(#furGrad)"/>
+
+      <!-- Orejas redondeadas y tiernas -->
+      <path d="M 118 105 Q 100 45 145 75 Q 150 95 130 115 Z" fill="url(#furGrad)"/>
+      <path d="M 242 105 Q 260 45 215 75 Q 210 95 230 115 Z" fill="url(#furGrad)"/>
+      <path d="M 128 98 Q 118 65 143 80 Q 145 92 133 103 Z" fill="#5a3d3d"/>
+      <path d="M 232 98 Q 242 65 217 80 Q 215 92 227 103 Z" fill="#5a3d3d"/>
+
+      <!-- Mejillas sonrosadas -->
+      <ellipse cx="128" cy="170" rx="16" ry="10" fill="#ff9e9e" opacity="0.45"/>
+      <ellipse cx="232" cy="170" rx="16" ry="10" fill="#ff9e9e" opacity="0.45"/>
+
+      <!-- Ojos ENORMES y tiernos -->
+      <ellipse cx="148" cy="152" rx="24" ry="28" fill="url(#eyeGrad)"/>
+      <ellipse cx="212" cy="152" rx="24" ry="28" fill="url(#eyeGrad)"/>
+      <ellipse cx="148" cy="158" rx="13" ry="16" fill="#1a1a1a"/>
+      <ellipse cx="212" cy="158" rx="13" ry="16" fill="#1a1a1a"/>
+      <circle cx="143" cy="148" r="5" fill="#fff"/>
+      <circle cx="207" cy="148" r="5" fill="#fff"/>
+      <circle cx="152" cy="162" r="2.5" fill="#fff" opacity="0.8"/>
+      <circle cx="216" cy="162" r="2.5" fill="#fff" opacity="0.8"/>
+      <!-- Pestañas -->
+      <path d="M 126 138 Q 118 130 110 132" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 234 138 Q 242 130 250 132" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Nariz y boquita -->
+      <path d="M 172 180 L 188 180 L 180 190 Z" fill="#ffb6c9"/>
+      <path d="M 180 190 Q 180 199 168 200" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 180 190 Q 180 199 192 200" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- Bigotes -->
+      <line x1="115" y1="178" x2="75" y2="172" stroke="#888" stroke-width="1.5" opacity="0.7"/>
+      <line x1="115" y1="188" x2="73" y2="190" stroke="#888" stroke-width="1.5" opacity="0.7"/>
+      <line x1="245" y1="178" x2="285" y2="172" stroke="#888" stroke-width="1.5" opacity="0.7"/>
+      <line x1="245" y1="188" x2="287" y2="190" stroke="#888" stroke-width="1.5" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <!-- Ramo circular ENORME estilo bouquet de girasoles -->
+  <div class="bouquet">
+    <svg id="bouquetSvg" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+
+  <div class="message">Para mi Isita.<br>Vuelve rápido porque te extraño 🌻🐾</div>
+</div>
+
+<div id="petals"></div>
+
+<script>
+  // ---------- Generar ramo circular denso, estilo "sunburst" ----------
+  const svgNS = "http://www.w3.org/2000/svg";
+  const bouquetSvg = document.getElementById('bouquetSvg');
+  const cx = 150, cy = 150;
+
+  function el(tag, attrs) {
+    const e = document.createElementNS(svgNS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // Papel envolvente oscuro en forma de abanico (picos detrás de las flores)
+  const paperColors = ['#1c1a17', '#2b241c', '#3a2f22'];
+  const paperPoints = 14;
+  for (let i = 0; i < paperPoints; i++) {
+    const angle = (i / paperPoints) * Math.PI * 2;
+    const len = 133 + (i % 3) * 8;
+    const spread = 0.16;
+    const x1 = cx + Math.cos(angle - spread) * 61;
+    const y1 = cy + Math.sin(angle - spread) * 61;
+    const x2 = cx + Math.cos(angle + spread) * 61;
+    const y2 = cy + Math.sin(angle + spread) * 61;
+    const xTip = cx + Math.cos(angle) * len;
+    const yTip = cy + Math.sin(angle) * len;
+    const tri = el('polygon', {
+      points: `${x1},${y1} ${xTip},${yTip} ${x2},${y2}`,
+      fill: paperColors[i % paperColors.length]
+    });
+    bouquetSvg.appendChild(tri);
+  }
+
+  // Base blanca detrás de las flores (papel claro interior, como en la referencia)
+  bouquetSvg.appendChild(el('circle', { cx, cy, r: 102, fill: '#fdf6e3' }));
+
+  // Relleno de "baby's breath" (motitas blancas) disperso
+  for (let i = 0; i < 40; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const r = 41 + Math.random() * 68;
+    const px = cx + Math.cos(a) * r;
+    const py = cy + Math.sin(a) * r;
+    bouquetSvg.appendChild(el('circle', { cx: px, cy: py, r: 2 + Math.random() * 2, fill: '#ffffff', opacity: 0.9 }));
+  }
+
+  // Flores (girasoles amarillos) en anillos concéntricos densos
+  const yellowTones = ['#ffb02e', '#ffc93c', '#ffd93b', '#ffe066', '#f5a623'];
+  const centerTone = '#4a2f10';
+
+  function drawFlower(x, y, size, color) {
+    const g = el('g', { transform: `translate(${x},${y})` });
+    const petals = 10;
+    for (let p = 0; p < petals; p++) {
+      const ang = (p / petals) * Math.PI * 2;
+      const px = Math.cos(ang) * size * 0.55;
+      const py = Math.sin(ang) * size * 0.55;
+      g.appendChild(el('ellipse', {
+        cx: px, cy: py, rx: size * 0.42, ry: size * 0.62,
+        fill: color,
+        transform: `rotate(${ang * 180 / Math.PI + 90} ${px} ${py})`
+      }));
+    }
+    g.appendChild(el('circle', { cx: 0, cy: 0, r: size * 0.42, fill: centerTone }));
+    // textura del centro
+    for (let d = 0; d < 6; d++) {
+      const a2 = Math.random() * Math.PI * 2;
+      const r2 = Math.random() * size * 0.3;
+      g.appendChild(el('circle', { cx: Math.cos(a2) * r2, cy: Math.sin(a2) * r2, r: size * 0.03, fill: '#2b1c0c' }));
+    }
+    bouquetSvg.appendChild(g);
+  }
+
+  const rings = [
+    { r: 0,   count: 1,  size: 31 },
+    { r: 29,  count: 6,  size: 28 },
+    { r: 56,  count: 9,  size: 27 },
+    { r: 80,  count: 12, size: 24 },
+    { r: 102, count: 14, size: 20 }
+  ];
+
+  rings.forEach((ring, ringIdx) => {
+    for (let i = 0; i < ring.count; i++) {
+      const angle = (i / ring.count) * Math.PI * 2 + ringIdx * 0.2;
+      const jitterR = ring.r + (Math.random() * 6 - 3);
+      const x = cx + Math.cos(angle) * jitterR;
+      const y = cy + Math.sin(angle) * jitterR;
+      const size = ring.size + (Math.random() * 6 - 3);
+      const color = yellowTones[Math.floor(Math.random() * yellowTones.length)];
+      drawFlower(x, y, size, color);
+    }
+  });
+
+  // Corona chiquita arriba, como detalle final (opcional/decorativo)
+  const crown = el('g', { transform: `translate(${cx},${cy - 119})` });
+  crown.appendChild(el('polygon', {
+    points: '-16,10 -16,-6 -8,4 0,-10 8,4 16,-6 16,10',
+    fill: '#e8b84b', stroke: '#a5791f', 'stroke-width': 1
+  }));
+  crown.appendChild(el('circle', { cx: 0, cy: -6, r: 3, fill: '#c0392b' }));
+  bouquetSvg.appendChild(crown);
+
+  // ---------- Pétalos cayendo de fondo ----------
+  const container = document.getElementById('petals');
+  const emojis = ['🌻', '🌼', '✨'];
+  const count = 18;
+
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    petal.style.left = Math.random() * 100 + 'vw';
+    const duration = 6 + Math.random() * 6;
+    const delay = Math.random() * 8;
+    petal.style.animationDuration = duration + 's';
+    petal.style.animationDelay = delay + 's';
+    petal.style.fontSize = (1 + Math.random()) + 'rem';
+    container.appendChild(petal);
+  }
+</script>
+
+</body>
+</html>
